@@ -476,7 +476,6 @@ if __name__ == '__main__':
                     function sendmailpr() {
                         name_form = document.getElementById("input-name").value
                         email_form = document.getElementById("input-email").value
-                        console.log(email_form);
                         message_form = document.getElementById("input-message").value
                         message = "Thank you "+name_form+"  for giving review to my project I am glad that you liked my project. I'm going to add more helpful projects to this website. I will notify you via email whenever a new project is added. You can also share an idea of what kind of project do you want that will help you in financial calculations via mail or on the contact form I will surely work on that project too.\nIf you or your business needs a website you can contact me however you want. As it is my new start I will make your first website for free just you have to pay for the domain name because it is not free even for me.\nOnce again thank you for your response."
                         message_tovinay = "New form filled by "+name_form+"\n Details are as follows"+"Name : "+name_form+"\nEmail : "+email_form+"\nMessage :"+message_form+"\nFrom Project 1 Page-Compound Interest Calculator"
@@ -491,7 +490,7 @@ if __name__ == '__main__':
                               'Content-Type': 'application/json'
                             },
                             body: JSON.stringify(json_form)
-                          }).then(res => console.log(res.json()))
+                          }).then(res => res.json())
                           fetch('https://dvinaymailbot.pythonanywhere.com/', {
                             method: 'POST',
                             headers: {
@@ -499,7 +498,7 @@ if __name__ == '__main__':
                               'Content-Type': 'application/json'
                             },
                             body: JSON.stringify(json_tovinay)
-                          }).then(res => console.log(res.json()))
+                          }).then(res => res.json())
                           document.getElementById("contact-form").reset();
                       }
                 </script>
