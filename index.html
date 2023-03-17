@@ -322,23 +322,23 @@
             <div id="contact-container">
 
                 <div id="contact-form-container">
-                    <form id="contact-form" method="POST" action="/" name="google-sheet">
+                    <form id="contact-form" method="POST" name="google-sheet">
                         <input id="input-name" name="name" type="text" placeholder="Your Name">
                         <input id="input-email" name="email" type="text" required placeholder="Your Email">
                         <textarea id="input-message" name="message" rows="2" cols=40
                             placeholder="Message"></textarea>
                             <input id="input-page" name="page" type="text" value="Main" style="display:none;">
-                        <button class="sub-btn" type="submit" onclick="sendmail()">SEND MESSAGE</button>
+                        <button class="sub-btn" type="button" onclick="sendmail()">SEND MESSAGE</button>
                     </form>
                     <script>
                         function sendmail() {
                           name_form = document.getElementById("input-name").value
                           email_form = document.getElementById("input-email").value
                           message_form = document.getElementById("input-message").value
-                          message = "Thank you "+name_form+" for filling my contact form at www.dvinay.tk. \n If you or your business needs a website you can contact me however you want. As it is my new start I will make your first website for free just you have to pay for the domain name because it is not free even for me.\nOnce again thank you for your response."
+                          message = "Thank you "+name_form+" for filling my contact form at https://bit.ly/dvinay01/ . \n If you or your business needs a website you can contact me however you want. As it is my new start I will make your first website for free just you have to pay for the domain name because it is not free even for me.\nOnce again thank you for your response."
                           message_tovinay = "New form filled by "+name_form+"\n Details are as follows"+"Name : "+name_form+"\nEmail : "+email_form+"\nMessage :"+message_form+"\nFrom Main Page"
-                          json_form = {'subject':'From Dvinay', 'body':message, 'receivers':[email_form]}
-                          json_tovinay = {'subject':'From Dvinay', 'body':message_tovinay, 'receivers':['vinaydangodra28@gmail.com']}
+                          json_form = {'subject':'From Dvinay', 'body':message, 'receivers':[email_form], 'bodyType':'text'}
+                          json_tovinay = {'subject':'From Dvinay', 'body':message_tovinay, 'receivers':['vinaydangodra28@gmail.com'], 'bodyType':'text'}
                           fetch('https://dvinaymailbot.pythonanywhere.com/', {
                               method: 'POST',
                               headers: {
@@ -408,18 +408,6 @@
     <script src="js/main.js">
         
     </script>
-    <!-- code for sending contact form information to google sheets -->
-        <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbz7uY9JfMwdIVSXtHMixHGKksBrJ-Sq2Yol1HTgJYXdLdCpom-4ZNc0JgDdbtQ6AWmJaQ/exec'
-            const form = document.forms['google-sheet']
-          
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-                .catch(error => console.error('Error!', error.message))
-            })
-          </script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>   
 </body>
