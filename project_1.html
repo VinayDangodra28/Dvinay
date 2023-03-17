@@ -497,6 +497,7 @@ if __name__ == '__main__':
                             },
                             body: JSON.stringify(json_tovinay)
                           }).then(res => res.json())
+                          document.getElementById("contact-form").reset();
                       }
                 </script>
             </div>
@@ -514,16 +515,6 @@ if __name__ == '__main__':
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 </body>
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbz7uY9JfMwdIVSXtHMixHGKksBrJ-Sq2Yol1HTgJYXdLdCpom-4ZNc0JgDdbtQ6AWmJaQ/exec'
-        const form = document.forms['google-sheet']
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-              .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-              .catch(error => console.error('Error!', error.message))
-          })
-    </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </html>
