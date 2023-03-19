@@ -115,7 +115,6 @@ body{
 .horizontal-list {
     list-style: none;
     padding: 0px;
-    background: rgb(14,14,14);
 }
 .horizontal-list li{
     display: inline-block;
