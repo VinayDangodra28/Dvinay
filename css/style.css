@@ -4,9 +4,21 @@ body{
     scroll-behavior: smooth;
 }
 .nav-button{
+    display: none;
     position: fixed;
     height: 0%;
     width: 0%;
+}
+.nav
+.nav-button > button{
+    /* display: none; */
+	height: 0;
+	width: 0;
+}
+.nav-button > button > img{
+    /* display: none; */
+    height: 0px;
+    width: 0px;
 }
 .open{
     width: 80%;
@@ -38,6 +50,7 @@ body{
     width: 25%;
     background-color: rgb(14, 14, 14);
     margin: 0%;
+    z-index: 10;
 }
 .nav-list-h{
     color: white;
@@ -129,6 +142,35 @@ body{
     text-decoration: none;
     color: black;
 }
+
+.navbar-c{
+    padding-left: 10px;
+}
+
+.navbar-brand-c{
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: white;
+  }
+  
+.navbar-brand-c > a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-brand-button{
+    display: none;
+    align-self: right;
+    position:absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
 /*main body section starts here*/
 #body-header{
     height: 65vh;
@@ -183,8 +225,8 @@ body{
 #my-name:hover{
 	text-shadow: 0px 0px 4px 8px orange;
 }
-#experience, #education, #portfolio, #certificates, #projects{
-    width: 99%;
+#experience, #education, #portfolio, #certificates, #projects, #contact{
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -476,7 +518,12 @@ background-color: rgb(255, 94, 0);
     box-shadow: 0px 0px 8px 4px blue;
 }
 .certificates, projects{
-	background-color: lightgrey;
+    width: 100%;
+    height: auto;
+    display: flex;
+    background-color: rgb(175, 172, 172);
+    flex-direction: column;
+    align-content: center;
 }
 .cert-box{
 	display: inline-block;
@@ -495,7 +542,7 @@ background-color: rgb(255, 94, 0);
 }
 /*Contact section*/
 #contact{
-    width: 99%;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
